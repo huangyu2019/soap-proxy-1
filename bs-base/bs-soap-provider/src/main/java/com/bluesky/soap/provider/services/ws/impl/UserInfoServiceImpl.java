@@ -2,6 +2,7 @@ package com.bluesky.soap.provider.services.ws.impl;
 
 import com.bluesky.soap.provider.services.ws.UserInfoService;
 import org.springframework.stereotype.Service;
+import com.bluesky.soap.provider.services.ws.entity.User;
 
 import javax.jws.WebService;
 import javax.xml.ws.BindingType;
@@ -22,7 +23,7 @@ import javax.xml.ws.soap.SOAPBinding;
 @Service
 public class UserInfoServiceImpl implements UserInfoService {
 
-    public String getUserAddress(String userName) {
-        return userName + "在白云区人和镇方石村";
+    public String getUserAddress(String address, User user) {
+        return user.getUserName() + address;
     }
 }
